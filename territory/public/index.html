@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#080b14">
+  <title>Paintrush · Territory Arena</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <!-- in-game HUD -->
+  <div id="hud" class="hidden">
+    <div id="timer">2:00</div>
+    <div id="board"></div>
+    <div id="topright">
+      <button id="roomcode" title="Copy invite link"></button>
+      <button id="mute">Sound on</button>
+    </div>
+    <div id="feed"></div>
+    <canvas id="mini" width="180" height="180"></canvas>
+    <div id="me"><span id="mePct">0%</span><span id="meSub">of the map</span></div>
+    <div id="hint">Move to start<small>WASD / arrow keys / swipe</small></div>
+  </div>
+
+  <div id="death" class="hidden">
+    <div id="deathTitle">Eliminated</div>
+    <div id="deathBy"></div>
+    <div id="deathTimer"></div>
+  </div>
+
+  <div id="toast"></div>
+
+  <!-- lobby -->
+  <div id="lobby" class="overlay">
+    <div class="card">
+      <h1><span>PAINT</span>RUSH</h1>
+      <p class="tag">Paint the map. Close the loop. Don't get cut off.</p>
+
+      <label for="name">Your name</label>
+      <input id="name" maxlength="14" placeholder="Anonymous painter" autocomplete="off" spellcheck="false">
+
+      <button id="quick" class="primary">Quick play</button>
+
+      <div class="split">
+        <button id="create">Create private room</button>
+        <div class="join">
+          <input id="code" maxlength="6" placeholder="CODE" autocomplete="off" spellcheck="false">
+          <button id="join">Join</button>
+        </div>
+      </div>
+
+      <div id="lbWrap">
+        <h2>Today's best</h2>
+        <ol id="lb"><li class="empty">No rounds finished yet</li></ol>
+      </div>
+
+      <p class="keys"><b>WASD</b> / <b>arrows</b> / swipe to steer. Leave your colour to draw a trail, come back to claim everything inside. Touch a trail and that player is out, even yours.</p>
+    </div>
+  </div>
+
+  <!-- round results -->
+  <div id="results" class="overlay hidden">
+    <div class="card">
+      <h2 id="resTitle">Round over</h2>
+      <ol id="resList"></ol>
+      <p id="resNext">Next round in 8s</p>
+    </div>
+  </div>
+
+  <script type="module" src="client.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "paintrush",
+  "version": "1.0.0",
+  "description": "Real-time multiplayer territory capture game (authoritative Node server + neon canvas client)",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "test": "node --test \"test/*.test.js\"",
+    "sim": "node scripts/sim.js",
+    "load": "node scripts/loadtest.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}
